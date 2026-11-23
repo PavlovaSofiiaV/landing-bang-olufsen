@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+:root {
+  --color-bg-primary: #{$color-bg-primary};
+  --color-bg-secondary: #{$color-bg-secondary};
+  --color-bg-warm: #{$color-bg-warm};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-inverse: #{$color-text-inverse};
+  --color-accent: #{$color-accent};
+  --color-btn-hover: #{$color-btn-hover};
+  --color-btn-pressed: #{$color-btn-pressed};
+  --font-base: #{$font-family-base};
+}

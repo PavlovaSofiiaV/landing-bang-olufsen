@@ -1,0 +1,41 @@
+// Кольори макета Bang & Olufsen
+$color-bg-primary: #fff;
+$color-bg-secondary: #f9f9f9;
+$color-bg-warm: #fcfaef; // світло-бежевий фон секції "Timeless, for 50 years..."
+$color-text-primary: #1b1b1b;
+$color-text-secondary: #7e7e83;
+$color-text-inverse: #fff;
+$color-accent: #f98921; // помаранчева кнопка Default / рамка Focus
+$color-btn-hover: #1b1b1b;
+$color-btn-pressed: #010810;
+$color-input-bg: #f9f9f9;
+$color-input-border-hover: #dbdbdb;
+
+// Типографіка (Manrope)
+$font-family-base:
+  'Manrope',
+  -apple-system,
+  blinkmacsystemfont,
+  sans-serif;
+
+// Брейкпоінти (Mobile First)
+$breakpoints: (
+  'tablet': 744px,
+  'desktop': 1260px,
+);
+
+// Параметри модульної сітки макета
+$grid-cols-mobile: 2;
+$grid-gutter-mobile: 20px;
+$grid-margin-mobile: 20px;
+$grid-cols-tablet: 6;
+$grid-gutter-tablet: 24px;
+$grid-margin-tablet: 72px;
+$grid-cols-desktop: 12;
+$grid-gutter-desktop: 24px;
+$grid-margin-desktop: 120px;
+$container-max-width: 1260px;
+
+// Радіуси та анімації
+$radius-sm: 8px;
+$transition-base: 0.3s ease;

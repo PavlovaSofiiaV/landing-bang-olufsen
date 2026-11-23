@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.l-grid {
+  display: grid;
+  grid-template-columns: repeat($grid-cols-mobile, 1fr);
+  column-gap: $grid-gutter-mobile;
+
+  @include mq('tablet') {
+    grid-template-columns: repeat($grid-cols-tablet, 1fr);
+    column-gap: $grid-gutter-tablet;
+  }
+
+  @include mq('desktop') {
+    grid-template-columns: repeat($grid-cols-desktop, 1fr);
+    column-gap: $grid-gutter-desktop;
+  }
+}
+
+// Режим налагодження сітки для звірки з макетом
+.l-grid--debug {
+  background: repeating-linear-gradient(
+    to right,
+    rgb(255 0 0 / 10%) 0,
+    rgb(255 0 0 / 10%) calc((100% - #{$grid-gutter-mobile}) / 2),
+    transparent calc((100% - #{$grid-gutter-mobile}) / 2),
+    transparent calc((100% + #{$grid-gutter-mobile}) / 2)
+  );
+}
