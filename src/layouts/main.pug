@@ -1,20 +1,20 @@
 include ../mixins/mixins
 
 doctype html
-html(lang='uk')
+html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     block meta
     block title
-      title Keepsake — Digital & Branding Agency
+      title Bang & Olufsen
     block fonts
     block styles
       link(rel='stylesheet', href='/src/styles/main.scss')
   body#top
+    include ../includes/svg-sprite
     block data
     block header
     main
       block content
     block footer
-    block scripts

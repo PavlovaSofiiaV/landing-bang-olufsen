@@ -1,13 +1,8 @@
-//- 1. Міксин кнопки (якщо передано href — робить посилання <a>, якщо ні — <button>)
-mixin btn(text, href, variant = 'primary')
-  - const classes = ['btn', variant !== 'primary' ? `btn--${variant}` : ''];
-  if href
-    a(href=href, class=classes)&attributes(attributes)= text
-  else
-    button(type='button', class=classes)&attributes(attributes)= text
+mixin icon(name, width = 24, height = 24)
+  svg(width=width, height=height, aria-hidden='true')&attributes(attributes)
+    use(href=`#icon-${name}`)
 
-//- 2. Міксин адаптивної картинки (підтримує сучасні формати AVIF / WebP та звичайний JPG)
-mixin picture(name, alt, width = 400, height = 316, lazy = true)
+mixin picture(name, alt, width = 600, height = 600, lazy = true, priority = false)
   picture&attributes(attributes)
     source(srcset=`/src/assets/images/${name}.avif`, type='image/avif')
     source(srcset=`/src/assets/images/${name}.webp`, type='image/webp')
@@ -17,43 +12,6 @@ mixin picture(name, alt, width = 400, height = 316, lazy = true)
       width=width,
       height=height,
       loading=lazy ? 'lazy' : false,
+      fetchpriority=priority ? 'high' : false,
       decoding='async'
-    )&attributes(attributes)
-
-//- 3. Міксин-обгортка секції із заголовком, описом та вмістом (block)
-mixin section-box(title, subtitle, id)
-  section.section(id=id)&attributes(attributes)
-    .container
-      if title
-        h2.section-title= title
-      if subtitle
-        p.section-desc= subtitle
-      block
-
-//- 4. Міксин SVG-іконок через case/when
-mixin icon(name)
-  svg.icon(
-    width='28',
-    height='28',
-    viewBox='0 0 24 24',
-    fill='none',
-    stroke='currentColor',
-    stroke-width='1.8',
-    aria-hidden='true'
-  )&attributes(attributes)
-    case name
-      when 'branding'
-        circle(cx='12', cy='12', r='9')
-        path(d='M12 7v10M7 12h10')
-      when 'web'
-        rect(x='3', y='4', width='18', height='14', rx='2')
-        path(d='M8 20h8M12 18v2')
-      when 'print'
-        path(
-          d='M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2'
-        )
-        rect(x='6', y='14', width='12', height='7')
-      when 'motion'
-        polygon(points='5 3 19 12 5 21 5 3')
-      default
-        circle(cx='12', cy='12', r='8')
+    )
