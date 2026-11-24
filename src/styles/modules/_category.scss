@@ -7,47 +7,35 @@
 
   &__media {
     grid-column: span 1;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: var(--color-bg-secondary);
     border-radius: 4px;
 
+    @include mq('tablet') {
+      grid-column: span 3;
+      aspect-ratio: 288 / 184;
+    }
+
+    @include mq('desktop') {
+      grid-column: span 6;
+      aspect-ratio: 498 / 324;
+    }
+
+    picture,
     img {
+      display: block;
       width: 100%;
-      height: 130px;
+      height: 100%;
+    }
+
+    img {
       object-fit: cover;
       transition: transform $transition-base;
-
-      @include mq('tablet') {
-        height: 184px;
-      }
-
-      @include mq('desktop') {
-        height: 324px;
-      }
     }
 
     &:hover img {
       transform: scale(1.05);
-    }
-
-    @include mq('tablet') {
-      &:first-child {
-        grid-column: span 4;
-      }
-
-      &:last-child {
-        grid-column: span 2;
-      }
-    }
-
-    @include mq('desktop') {
-      &:first-child {
-        grid-column: span 8;
-      }
-
-      &:last-child {
-        grid-column: span 4;
-      }
     }
   }
 
