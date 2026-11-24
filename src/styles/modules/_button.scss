@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  padding-inline: 48px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.68;
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent);
+  border-radius: $radius-sm;
+  transition: background-color $transition-base;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-btn-hover);
+  }
+
+  &:active {
+    background-color: var(--color-btn-pressed);
+  }
+}

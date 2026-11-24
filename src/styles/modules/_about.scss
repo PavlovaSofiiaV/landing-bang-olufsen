@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.about {
+  &__banner img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    @include mq('tablet') {
+      height: 400px;
+    }
+
+    @include mq('desktop') {
+      height: 460px;
+    }
+  }
+
+  &__body {
+    padding-block: 48px;
+    background-color: var(--color-bg-warm);
+
+    @include mq('tablet') {
+      padding-block: 120px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 24px;
+
+    @include mq('tablet') {
+      grid-column: span 3;
+      margin-bottom: 0;
+    }
+
+    @include mq('desktop') {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    line-height: 1.4;
+
+    @include mq('tablet') {
+      grid-column: span 3;
+    }
+
+    @include mq('desktop') {
+      grid-column: span 6;
+    }
+  }
+}

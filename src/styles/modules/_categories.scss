@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+.categories {
+  padding-top: 48px;
+  padding-bottom: 96px;
+
+  @include mq('tablet') {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include mq('tablet') {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+
+    @include mq('tablet') {
+      gap: 56px;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+
+    @include mq('tablet') {
+      grid-column: span 3;
+    }
+
+    @include mq('desktop') {
+      grid-column: span 4;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-primary);
+
+  @include mq('tablet') {
+    font-size: 40px;
+  }
+
+  @include mq('desktop') {
+    font-size: 48px;
+  }
+}

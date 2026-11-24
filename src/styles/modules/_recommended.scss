@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.recommended {
+  padding-top: 64px;
+  padding-bottom: 48px;
+
+  @include mq('tablet') {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include mq('tablet') {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__list {
+    row-gap: 40px;
+
+    @include mq('tablet') {
+      row-gap: 56px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include mq('desktop') {
+      grid-column: span 4;
+    }
+  }
+}

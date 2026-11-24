@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+.contacts {
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  @include mq('tablet') {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  &__title {
+    margin-bottom: 48px;
+
+    @include mq('tablet') {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+
+    @include mq('tablet') {
+      margin-bottom: 80px;
+    }
+
+    @include mq('desktop') {
+      grid-column: 1 / 6;
+      margin-bottom: 0;
+    }
+  }
+
+  &__submit {
+    margin-top: 16px;
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-style: normal;
+
+    @include mq('desktop') {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+  }
+
+  &__value {
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: pre-line;
+    color: var(--color-text-primary);
+    transition: color $transition-base;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent);
+    }
+  }
+}
