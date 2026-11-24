@@ -1,0 +1,35 @@
+input#menu-toggle.menu-checkbox(type='checkbox')
+
+header.header
+  .l-container.header__inner
+    a.header__logo(href='#top', aria-label='Bang & Olufsen home')
+      +icon('logo', 152, 20)
+
+    .header__actions
+      a.header__phone(href='tel:+123455555555', aria-label='Call +1 234 5555-55-55')
+        span.header__phone-number +1 234 5555-55-55
+        +icon('phone', 24, 24)
+
+      label.header__burger(for='menu-toggle', aria-label='Open menu', tabindex='0', role='button')
+        span.header__burger-default
+          +icon('burger', 24, 24)
+        span.header__burger-hover
+          +icon('burger-hover', 24, 24)
+
+aside.menu(aria-label='Mobile navigation')
+  .l-container.menu__inner
+    .menu__top
+      a.menu__logo(href='#top', aria-label='Bang & Olufsen home')
+        +icon('logo', 152, 20)
+      label.menu__close(for='menu-toggle', aria-label='Close menu', tabindex='0', role='button')
+        +icon('close', 24, 24)
+
+    nav.menu__nav
+      ul.menu__list
+        each item in navLinks
+          li.menu__item
+            a.menu__link(href=item.href)= item.text
+
+    .menu__contacts
+      a.menu__phone(href='tel:+123455555555') +1 234 5555-55-55
+      a.menu__call-link(href='tel:+123455555555') CALL TO ORDER

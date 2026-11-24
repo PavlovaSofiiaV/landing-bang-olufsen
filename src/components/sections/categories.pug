@@ -1,0 +1,16 @@
+section#categories.categories
+  .l-container
+    h2.section-title.categories__title
+      | Sound. Vision.
+      br
+      | It’s your pick.
+    .categories__list
+      each cat in categoriesList
+        article.category.categories__item
+          .l-grid.category__images
+            each imgItem in cat.images
+              .category__media
+                +picture(imgItem.name, imgItem.alt, 600, 320)
+          h3.category__title= cat.title
+    .l-grid.categories__footer
+      a.button.categories__btn(href='#contacts') View all

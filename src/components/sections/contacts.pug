@@ -1,0 +1,42 @@
+section#contacts.contacts
+  .l-container
+    h2.section-title.contacts__title Contact us
+    .l-grid.contacts__content
+      form.contacts__form(action='#', method='post')
+        .field.contacts__field
+          label.field__label(for='contact-name') Name
+          input#contact-name.field__input(
+            type='text',
+            name='name',
+            placeholder='Name',
+            autocomplete='name',
+            required
+          )
+        .field.contacts__field
+          label.field__label(for='contact-email') Email
+          input#contact-email.field__input(
+            type='email',
+            name='email',
+            placeholder='Email',
+            autocomplete='email',
+            required
+          )
+        .field.contacts__field
+          label.field__label(for='contact-message') Message
+          textarea#contact-message.field__input.field__input--textarea(
+            name='message',
+            placeholder='Message',
+            rows='4',
+            required
+          )
+        button.button.contacts__submit(type='submit') Send
+
+      address.contacts__info
+        each item in contactDetails
+          .contacts__group
+            span.contacts__label= item.label
+            a.contacts__value(
+              href=item.href,
+              target=item.label === 'Address' ? '_blank' : false,
+              rel=item.label === 'Address' ? 'noopener noreferrer' : false
+            )= item.value
